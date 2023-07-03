@@ -7,15 +7,22 @@
 Console.WriteLine("Task 27:");
 Console.WriteLine();
 
+int Summation(int num)
+{
+    int res = num % 10;
+
+    while ((num / 10) > 0)
+    {
+        num /= 10;
+        res += num % 10;
+    }
+
+    return res;
+}
+
 Console.Write("Input nummber: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
-int res = num % 10;
+int result = Summation(num);
 
-while ((num / 10) > 0)
-{
-    num /= 10;
-    res += num % 10;
-}
-
-Console.WriteLine($"Sum of digits = {res}");
+Console.WriteLine($"Sum of digits of {num} = {result}");
