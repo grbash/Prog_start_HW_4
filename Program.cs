@@ -7,13 +7,20 @@
 Console.WriteLine("Task 25:");
 Console.WriteLine();
 
+double Exponention(double num, int exp)
+{
+    double res = num;
+    for (int i = 0; i < (exp - 1); i++) res *= num;
+    
+    return res;
+}
+
 Console.Write("Input numA: ");
 double numA = Convert.ToDouble(Console.ReadLine());
 
 Console.Write("Input numB: ");
 int numB = Convert.ToInt32(Console.ReadLine());
 
-double res = numA;
-for (int i = 0; i < (numB - 1); i++) res *= numA;
+double result = Exponention(numA, numB);
 
-Console.WriteLine($"numA ^ numB = {res}");
+Console.WriteLine($"numA ^ numB = {result}");
