@@ -2,20 +2,25 @@
 // (если в условии задачи написано "возводит число A в натуральную степень B", то мы допускаем, 
 // что число B на вход мы получим натуральное, а вот А может быть любое, иначе придется использовать слишком много проверок)
 
-// Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+// Задача 29: Напишите программу, которая задаёт массив из произвольного количества элементов и выводит их на экран.
 
-Console.WriteLine("Task 27:");
+Console.WriteLine("Task 29:");
 Console.WriteLine();
 
-Console.Write("Input nummber: ");
-int num = Convert.ToInt32(Console.ReadLine());
-
-int res = num % 10;
-
-while ((num / 10) > 0)
+void ArrayMaker(int arrayLenght)
 {
-    num /= 10;
-    res += num % 10;
+    int[] arr = new int[arrayLenght];
+    for (int i = 0; i < arrayLenght; i++) arr[i] = new Random().Next(-arrayLenght, arrayLenght);
+    Console.Write("[");
+    for (int i = 0; i < arrayLenght; i++)
+    {
+        if (i == 0) Console.Write(arr[i]);
+        else Console.Write($", {arr[i]}");
+    }
+    Console.WriteLine("]");
 }
 
-Console.WriteLine($"Sum of digits = {res}");
+Console.Write("Enter the number of array elements: ");
+int arrayLenght = Convert.ToInt32(Console.ReadLine());
+
+ArrayMaker(arrayLenght);
