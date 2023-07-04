@@ -10,7 +10,7 @@ Console.WriteLine();
 void ArrayMaker(int arrayLenght)
 {
     int[] arr = new int[arrayLenght];
-    for (int i = 0; i < arrayLenght; i++) arr[i] = new Random().Next(-arrayLenght, arrayLenght);
+    for (int i = 0; i < arrayLenght; i++) arr[i] = new Random().Next(-arrayLenght, arrayLenght + 1);
     Console.Write("[");
     for (int i = 0; i < arrayLenght; i++)
     {
